@@ -7,6 +7,7 @@ import GoldenRatio from './components/GoldenRatio.vue'
 import BMI from './components/BMI.vue'
 import BaseConverter from './components/BaseConverter.vue'
 import DataStorageConverter from './components/DataStorageConverter.vue'
+import Temperature from './components/Temperature.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -45,6 +46,11 @@ export default new Router({
           path: 'Data.Storage.Converter',
           name: 'Data Storage Converter',
           component: DataStorageConverter
+        },
+        {
+          path: '/Temperature',
+          name: 'Temperature',
+          component: Temperature
         }
       ]
     }

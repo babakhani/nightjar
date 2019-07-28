@@ -60,6 +60,12 @@ export default {
           route: 'Data.Storage.Converter',
           description: 'Conversion units for the Data Storage',
           icon: 'dataStorageConverter'
+        },
+        {
+          name: 'Temperature',
+          route: 'Temperature',
+          description: 'convert temperature unit',
+          icon: 'temperature'
         }
       ],
       searchQuery: null,
