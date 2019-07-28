@@ -7,8 +7,32 @@
           <q-card>
             <q-card-separator />
               <q-card-main>
-              </q-card-main>
-           </q-card>
+                <div class="row q-mt-lg">
+                  <div class="col-8 col-md-7 col-sm-6 col-xs-5 q-mb-md">
+                    <q-input type="number" v-model="inputValue" float-label="Enter Number" />
+                  </div>
+                  <div class="col-3 col-xs-auto q-ml-lg">
+                    <q-select
+                       v-model="inputUnit"
+                       float-label="from base"
+                       :options="items"
+                       />
+                  </div>
+                  <div class="col-8 col-md-7 col-sm-6 col-xs-5 q-mb-md">
+                    </div>
+                  <div class="col-3 col-xs-auto q-ml-lg">
+                    <q-select
+                       v-model="outputUnit"
+                       float-label="to base"
+                       :options="items"
+                       />
+                  </div>
+                </div>
+                <div class="q-mt-md">
+                  <q-btn @click="back" label="Back"/>
+                </div>
+            </q-card-main>
+          </q-card>
         </div>
       </div>
     </div>
@@ -16,16 +40,28 @@
 </template>
 
 <script>
-import Unit from '@/units'
-import Converter from 'convert-units'
-import UnitConverter from '@/units-converter'
 export default {
   name: 'Temperature',
   data () {
-    return {
+    return { 
+      inputUnit: 'F',
+      outputUnit: '',
+      base: '',
+      items: [
+        {
+          label: 'Fahrenheit',
+          value: 'F'
+        },
+        {
+          label: 'Kelvin',
+          value: 'K'
+        },
+        {
+          label: 'Rankine',
+          value: 'R'
+        }
+      ]
     }
-  },
-  computed: {
   },
   methods: {
     back () {
@@ -35,8 +71,3 @@ export default {
 }
 </script>
 
-<style>
-a {
-  text-decoration : none;
-}
-</style>
