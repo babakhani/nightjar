@@ -1,20 +1,31 @@
 <template>
-  <q-page class="q-pa-lg">
-    <div>
-      <h4 class="q-mb-md">Body Mass Index</h4>
+  <q-page class="q-pa-lg border-top">
+    <div class="row">
+      <h4 class="q-my-md">{{ $t('body_mass_index') }}
+        <a
+          href=https://en.wikipedia.org/wiki/Body_mass_index
+          target="_blank"
+          :title="$t('bmi_wiki_icon')">
+          <q-icon
+          class="text-warning"
+          name="help"
+          />
+        </a>
+      </h4>
+    </div>
       <div class="row">
         <div class="col-12 col-md-12 col-lg-6">
           <q-card>
             <q-card-separator />
               <q-card-main>
                 <div class="row">
-                  <div class="col-8 col-md-7 col-sm-6 col-xs-5 q-mb-md" >
-                    <q-input type="number" v-model="height" float-label="Your height"/>
+                  <div class="col-8 col-md-8 col-sm-8 col-xs-12 q-mb-md q-pr-md" >
+                    <q-input type="number" v-model="height" :float-label="$t('height_label')"/>
                   </div>
-                    <div class="col-3 col-xs-auto q-ml-lg">
+                    <div class="col-4 col-lg-4 col-md-4 col-xm-4 col-sm-4 col-xs-12 q-pr-md">
                       <q-select
                          v-model="heightUnit"
-                         float-label="Unit"
+                         :float-label="$t('height_unit')"
                          :options="unit.length"
                          :separator="true"
                          radio
@@ -22,13 +33,13 @@
                     </div>
                 </div>
                 <div class="row">
-                  <div class="col-8 col-md-7 col-sm-6 col-xs-5 q-mb-md">
-                    <q-input type="number" v-model="weight" float-label="Your weight"/>
+                  <div class="col-8 col-md-8 col-sm-8 col-xs-12 q-mb-md q-pr-md">
+                    <q-input type="number" v-model="weight" :float-label="$t('weight_label')"/>
                   </div>
-                  <div class="col-3 col-xs-auto q-ml-lg">
+                    <div class="col-4 col-lg-4 col-md-4 col-xm-4 col-sm-4 col-xs-12 q-pr-md">
                     <q-select
                        v-model="weightUnit"
-                       float-label="Unit"
+                         :float-label="$t('weight_unit')"
                        :options="unit.weight"
                        :separator="true"
                        radio
@@ -97,18 +108,13 @@
                                 </a>
                                   </q-field>
                                   <div class="q-mt-md">
-                                    <q-btn
-                                       @click="reset"
-                                       label="Reset"/>
-                                    <q-btn
-                                       @click="back"
-                                       label="Back"/>
+                                    <q-btn @click="reset" :label="$t('Reset')"/>
+                                      <q-btn @click="back" :label="$t('Back')"/>
                                   </div>
               </q-card-main>
            </q-card>
         </div>
       </div>
-    </div>
   </q-page>
 </template>
 
@@ -124,16 +130,16 @@ export default {
       gender: 'male',
       height: null,
       weight: null,
-      weightUnit: 'kg',
-      heightUnit: 'cm',
+      weightUnit: this.$config.defaultUnits.weight,
+      heightUnit: this.$config.defaultUnits.height,
       seen: false,
       // TODO: i18n
       bmiMessage: {
-        underWeight: 'You are Under weight',
-        normal: 'You are Normal',
-        overWeight: 'You are Overweight',
-        obesity: 'You are Obesity',
-        severeObesity: 'You are Severe obesity'
+        underWeight: this.$t('bmi_underWeight'), // 'You are Under weight',
+        normal: this.$t('bmi_normal'), // 'You are Normal',
+        overWeight: this.$t('bmi_overWeight'), // 'You are Overweight',
+        obesity: this.$t('bmi_obesity'), // 'You are Obesity',
+        severeObesity: this.$t('bmi_severeObesity') // 'You are Severe obesity'
       }
     }
   },
@@ -166,7 +172,7 @@ export default {
       } else if (bmi >= 25 && bmi < 30) {
         out = this.bmiMessage.overWeight
       } else if (bmi >= 30 && bmi < 35) {
-        out = this.bmiMessage.obisity
+        out = this.bmiMessage.obesity
       } else if (bmi >= 35) {
         out = this.bmiMessage.severeObesity
       }

@@ -1,13 +1,13 @@
 <template>
-  <q-page class="q-pa-lg">
+  <q-page class="q-pa-md">
     <q-search
-          class="q-mb-lg"
+          class="q-mb-md"
           v-model="searchQuery" />
       <div class="row">
         <div
            v-for="(item, index) in searchResult"
            v-bind:key="item"
-           class="q-pa-sm col-12 col-md-4 col-lg-3" >
+           class="q-pa-sm col-12 col-md-6 col-lg-4 col-xl-3" >
            <router-link
            :key="index"
            :to="{ name: item.name }" >

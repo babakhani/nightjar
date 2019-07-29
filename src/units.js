@@ -47,44 +47,62 @@ export default {
   ],
   digital: [
     {
-      label: 'b',
+      label: 'Bit',
       value: 'b'
     },
     {
-      label: 'Kb',
+      label: 'Kilobit',
       value: 'Kb'
     },
     {
-      label: 'Mb',
+      label: 'Megabit',
       value: 'Mb'
     },
     {
-      label: 'Gb',
+      label: 'Gigabit',
       value: 'Gb'
     },
     {
-      label: 'Tb',
+      label: 'Terabit',
       value: 'Tb'
     },
     {
-      label: 'B',
+      label: 'Byte',
       value: 'B'
     },
     {
-      label: 'KB',
+      label: 'Kilobyte',
       value: 'KB'
     },
     {
-      label: 'MB',
+      label: 'Megabyte',
       value: 'MB'
     },
     {
-      label: 'GB',
+      label: 'Gigabyte',
       value: 'GB'
     },
     {
-      label: 'TB',
+      label: 'Terabyte',
       value: 'TB'
+    }
+  ],
+  numericalBases: [
+    {
+      label: 'Decimal',
+      value: '10'
+    },
+    {
+      label: 'Binary',
+      value: '2'
+    },
+    {
+      label: 'Octal',
+      value: '8'
+    },
+    {
+      label: 'Hex',
+      value: '16'
     }
   ]
 }
