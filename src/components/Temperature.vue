@@ -28,6 +28,7 @@
                        />
                   </div>
                 </div>
+                <sub>{{ convertTemperature }}</sub>
                 <div class="q-mt-md">
                   <q-btn @click="back" label="Back"/>
                 </div>
@@ -45,8 +46,8 @@ export default {
   data () {
     return { 
       inputUnit: 'F',
-      outputUnit: '',
-      base: '',
+      outputUnit: 'K',
+      inputValue : '',
       items: [
         {
           label: 'Fahrenheit',
@@ -57,11 +58,60 @@ export default {
           value: 'K'
         },
         {
+          label: 'Celsius',
+          value: 'C'
+        },
+        {
           label: 'Rankine',
           value: 'R'
         }
       ]
     }
+  },
+  computed: {
+   convertTemperature () {
+    var condition = this.inputUnit.concat('-To-', this.outputUnit)
+     switch(condition) {
+      case 'F-To-K':
+      return ((this.inputValue + 459.67)/1.8)
+       break;
+      case 'F-To-R':
+       return (this.inputValue + 459.67)
+       break;
+      case 'F-To-C':
+       return ((this.inputValue - 32) * 5.9 )
+       break;
+      case 'K-To-F':
+       return ((this.inputValue * 1.8) - 459.67)
+       break;
+      case 'K-To-R':
+       return (this.inputValue * 1.8)
+       break;
+      case 'K-To-C':
+       return (this.inputValue - 273.15)
+       break;
+      case 'R-To-K':
+       return (this.inputValue / 1.8)
+       break;
+      case 'R-To-F':
+       return (this.inputValue - 459.67)
+       break;
+      case 'R-To-C':
+       return ((this.inputValue - 491.67) * 5.9 )
+       break;
+      case 'C-To-F':
+       return ((this.inputValue * 9.5) + 32 )
+       break;
+      case 'C-To-K':
+       return (this.inputValue + 273.15 )
+       break;
+      case 'C-To-R':
+       return ((this.inputValue + 273.15) * 9.5 )
+       break;
+      default:
+       console.log('not found')
+     } 
+   }
   },
   methods: {
     back () {
