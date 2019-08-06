@@ -11,6 +11,7 @@ import LengthConverter from './components/LengthConverter.vue'
 import WeightConverter from './components/WeightConverter.vue'
 import AreaConverter from './components/AreaConverter.vue'
 import VolumeConverter from './components/VolumeConverter.vue'
+import VolumeConverter from './components/Temperatures.vue'
 Vue.use(Router)
 
 export default new Router({
