@@ -2,11 +2,11 @@
   <q-page class="border-top">
     <div class="row q-pa-md">
       <div class="q-pa-sm q-mx-auto col-12 col-xl-9 col-lg-9 col-md-10">
-      <h4 class="q-mt-xs">{{ $t('body_mass_index') }}
+      <h4 class="q-mt-xs">{{ $t('temperatures converter') }}
         <a
-          href=https://en.wikipedia.org/wiki/Body_mass_index
+          href=#
           target="_blank"
-          :title="$t('bmi_wiki_icon')">
+          :title="$t('temperatures_converter_wiki_icon')">
           <q-icon
           class="text-warning"
           name="help"
@@ -20,12 +20,12 @@
               <q-card-main>
                   <div class="row q-mt-md">
                   <div class="col-12 col-md-8 col-sm-8 col-xs-12 q-mb-md q-pr-md" >
-                    <q-input autofocus type="number" v-model="height" :float-label="$t('height_label')"/>
+                    <q-input autofocus type="number" v-model="temperature" :float-label="$t('temperatuer-lable')"/>
                   </div>
                     <div class="col-4 col-lg-4 col-md-4 col-xm-4 col-sm-4 col-xs-12 q-pr-md">
                       <q-select
-                         v-model="heightUnit"
-                         :float-label="$t('height_unit')"
+                         v-model="temperatureUnit"
+                         :float-label="$t('temperature_Unit')"
                          :options="unit.lengthBMI"
                          :separator="true"
                          radio
@@ -125,7 +125,7 @@ import Converter from 'convert-units'
 import UnitConverter from '@/units-converter'
 
 export default {
-  name: 'BMI',
+  name: 'Temperatures Convertor',
   data () {
     return {
       unit: Unit,
