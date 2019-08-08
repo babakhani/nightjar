@@ -14,7 +14,7 @@
         <div class="row">
           <div
              v-for="(item, index) in searchResult"
-             v-bind:key="item"
+             v-bind:key="index"
              class="q-pa-sm col-12 col-md-6 col-lg-4 col-xl-4" >
              <router-link
              :key="index"
@@ -47,6 +47,14 @@ export default {
   data () {
     return {
       calculators: [
+        {
+          name: 'Temperatures',
+          route: 'Temperatures',
+          description: '000',
+          icon: 'bmi',
+          tag: 'health , weight , height , mass , body',
+          category: 'Health'
+        },
         {
           name: 'BMI',
           route: 'BMI',

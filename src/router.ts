@@ -72,9 +72,9 @@ export default new Router({
           component: VolumeConverter
         },
         {
-           path: '/TemperaturesConverter',
-          name: 'Temperatures Converter',
-          component: Temperatures
+          path: '/Temperatures',
+          name: 'Temperatures',
+          component: TemperaturesConverter
         }
       ]
     }
