@@ -284,5 +284,19 @@ export default {
       label: 'Cubic yard',
       value: 'yd3'
     }
+  ],
+  temperature: [
+    {
+      lable: 'Fahrenheit',
+      value: 'F'
+    },
+    {
+      lable: 'Celsius',
+      value: 'C'
+    },
+    {
+      lable: 'kelvin',
+      value: 'K'
+    }
   ]
 }
