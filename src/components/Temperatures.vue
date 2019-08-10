@@ -6,7 +6,7 @@
         <a
           href=#
           target="_blank"
-          :title="$t('temperatures_converter_wiki_icon')">
+          :title="$t('thermometer.svg')">
           <q-icon
           class="text-warning"
           name="help"
@@ -254,8 +254,7 @@ export default {
       this.$router.go(-1)
     }
   }
-}
-</script>
+}</script>
 
 <style>
 a {
