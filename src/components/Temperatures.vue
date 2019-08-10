@@ -6,7 +6,7 @@
         <a
           href=#
           target="_blank"
-          :title="$t('thermometer.svg')">
+          :title="$t('/icon/thermometer.svg')">
           <q-icon
           class="text-warning"
           name="help"
