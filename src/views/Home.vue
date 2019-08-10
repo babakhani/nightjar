@@ -50,8 +50,8 @@ export default {
         {
           name: 'Temperatures',
           route: 'Temperatures',
-          description: '000',
-          icon: 'bmi',
+          description: ' Temperature conversion calculator',
+          icon: 'thermometer',
           tag: 'health , weight , height , mass , body',
           category: 'Health'
         },
