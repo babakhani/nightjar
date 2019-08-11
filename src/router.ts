@@ -12,6 +12,13 @@ import WeightConverter from './components/WeightConverter.vue'
 import AreaConverter from './components/AreaConverter.vue'
 import VolumeConverter from './components/VolumeConverter.vue'
 import TemperaturesConverter from './components/Temperatures.vue'
+import PressureConverter from './components/PressureConverter.vue'
+import SpeedConverter from './components/SpeedConverter.vue'
+import TimeConverter from './components/TimeConverter.vue'
+import AngleConverter from './components/AngleConverter.vue'
+import EnergyConverter from './components/EnergyConverter.vue'
+import FrequencyConverter from './components/FrequencyConverter.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -75,6 +82,36 @@ export default new Router({
           path: '/Temperatures',
           name: 'Temperatures',
           component: TemperaturesConverter
+        },
+        {
+          path: '/Pressure.Converter',
+          name: 'Pressure Converter',
+          component: PressureConverter
+        },
+        {
+          path: '/Speed.Converter',
+          name: 'Speed Converter',
+          component: SpeedConverter
+        },
+        {
+          path: '/Time.Converter',
+          name: 'Time Converter',
+          component: TimeConverter
+        },
+        {
+          path: '/Angle.Converter',
+          name: 'Angle Converter',
+          component: AngleConverter
+        },
+        {
+          path: '/Energy.Converter',
+          name: 'Energy Converter',
+          component: EnergyConverter
+        },
+        {
+          path: '/Frequency.Converter',
+          name: 'Frequency Converter',
+          component: FrequencyConverter
         }
       ]
     }

@@ -118,6 +118,54 @@ export default {
           icon: 'volumeConverter',
           tag: 'volume , volume convertion , convert , liquid , cubic',
           category: 'Convertion'
+        },
+        {
+          name: 'Pressure Converter',
+          route: 'Pressure.Converter',
+          description: 'Pressure conversion calculator',
+          icon: 'pressureConverter',
+          tag: 'pressure , pressure convertion , convert , atmosphere , pascal',
+          category: 'Convertion'
+        },
+        {
+          name: 'Speed Converter',
+          route: 'Speed.Converter',
+          description: 'Speed conversion calculator',
+          icon: 'speedConverter',
+          tag: 'speed , speed convertion , convert , metre per hour , knot',
+          category: 'Convertion'
+        },
+        {
+          name: 'Time Converter',
+          route: 'Time.Converter',
+          description: 'Time conversion calculator',
+          icon: 'timeConverter',
+          tag: 'time , time convertion , convert , second , minute , hour ',
+          category: 'Convertion'
+        },
+        {
+          name: 'Angle Converter',
+          route: 'Angle.Converter',
+          description: 'Angle conversion calculator',
+          icon: 'angleConverter',
+          tag: 'angle , angle convertion , convert , degrees , radian , gradian ',
+          category: 'Convertion'
+        },
+        {
+          name: 'Energy Converter',
+          route: 'Energy.Converter',
+          description: 'Energy conversion calculator',
+          icon: 'energyConverter',
+          tag: 'energy , energy convertion , convert , watt , joule ',
+          category: 'Convertion'
+        },
+        {
+          name: 'Frequency Converter',
+          route: 'Frequency.Converter',
+          description: 'Frequency conversion calculator',
+          icon: 'frequencyConverter',
+          tag: 'frequency , frequency convertion , convert , rpm , hz , mhz',
+          category: 'Convertion'
         }
       ],
       searchQuery: null,

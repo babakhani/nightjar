@@ -298,5 +298,193 @@ export default {
       lable: 'kelvin',
       value: 'K'
     }
+  ],
+  pressure: [
+    {
+      label: 'Pascal',
+      value: 'Pa'
+    },
+    {
+      label: 'Kilopascal',
+      value: 'kPa'
+    },
+    {
+      label: 'Hectopascal',
+      value: 'hPa'
+    },
+    {
+      label: 'Megapascal',
+      value: 'MPa'
+    },
+    {
+      label: 'Bar',
+      value: 'bar'
+    },
+    {
+      label: 'Torr',
+      value: 'torr'
+    },
+    {
+      label: 'Pound per square inch',
+      value: 'psi'
+    },
+    {
+      label: 'Kilopound per square inch',
+      value: 'ksi'
+    }
+  ],
+  speed: [
+    {
+      label: 'Metre per second',
+      value: 'm/s'
+    },
+    {
+      label: 'Kilometre per hour',
+      value: 'km/h'
+    },
+    {
+      label: 'Metre per hour',
+      value: 'm/h'
+    },
+    {
+      label: 'Knot',
+      value: 'knot'
+    },
+    {
+      label: 'Minute per kilometre',
+      value: 'min/km'
+    }
+  ],
+  time: [
+    {
+      label: 'Nanosecond',
+      value: 'ns'
+    },
+    {
+      label: 'Microsecond',
+      value: 'mu'
+    },
+    {
+      label: 'Millisecond',
+      value: 'ms'
+    },
+    {
+      label: 'Second',
+      value: 's'
+    },
+    {
+      label: 'Minute',
+      value: 'min'
+    },
+    {
+      label: 'Hour',
+      value: 'h'
+    },
+    {
+      label: 'Day',
+      value: 'd'
+    },
+    {
+      label: 'Week',
+      value: 'week'
+    },
+    {
+      label: 'Month',
+      value: 'month'
+    },
+    {
+      label: 'Year',
+      value: 'year'
+    }
+  ],
+  angle: [
+    {
+      label: 'Degree',
+      value: 'deg'
+    },
+    {
+      label: 'Radian',
+      value: 'rad'
+    },
+    {
+      label: 'Gradian',
+      value: 'grad'
+    },
+    {
+      label: 'Minute of arc',
+      value: 'arcmin'
+    },
+    {
+      label: 'Second of arc',
+      value: 'arcsec'
+    }
+  ],
+  energy: [
+    {
+      label: 'Watt hour',
+      value: 'Wh'
+    },
+    {
+      label: 'Miliwatt hour',
+      value: 'mWh'
+    },
+    {
+      label: 'Kilowatt hour',
+      value: 'kWh'
+    },
+    {
+      label: 'Megawatt hour',
+      value: 'MWh'
+    },
+    {
+      label: 'Gigawatt hour',
+      value: 'GWh'
+    },
+    {
+      label: 'Joule',
+      value: 'J'
+    },
+    {
+      label: 'Kilojoule',
+      value: 'kJ'
+    }
+  ],
+  frequency: [
+    {
+      label: 'Hertz',
+      value: 'Hz'
+    },
+    {
+      label: 'Milihertz',
+      value: 'mHz'
+    },
+    {
+      label: 'Kilohertz',
+      value: 'kHz'
+    },
+    {
+      label: 'Megahertz',
+      value: 'MHz'
+    },
+    {
+      label: 'Gigahertz',
+      value: 'GHz'
+    },
+    {
+      label: 'Terahertz',
+      value: 'THz'
+    },
+    {
+      label: 'Revolution per minute',
+      value: 'rpm'
+    },
+    {
+      label: 'Degree per second',
+      value: 'deg/s'
+    },
+    {
+      label: 'Radian per second',
+      value: 'rad/s'
+    }
   ]
 }

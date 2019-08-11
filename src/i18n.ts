@@ -35,7 +35,19 @@ const messages = {
     area_converter: 'Area Converter',
     area_converter_wiki_icon: 'What\'s Area?',
     volume_converter: 'Volume Converter',
-    volume_converter_wiki_icon: 'What\'s Volume?'
+    volume_converter_wiki_icon: 'What\'s Volume?',
+    pressure_converter: 'Pressure Converter',
+    pressure_converter_wiki_icon: 'What\'s Pressure?',
+    speed_converter: 'Speed Converter',
+    speed_converter_wiki_icon: 'What\'s Speed?',
+    time_converter: 'Time Converter',
+    time_converter_wiki_icon: 'What\'s Time?',
+    angle_converter: 'Angle Convertion Calculator',
+    angle_converter_wiki_icon: 'What\'s Angle?',
+    energy_converter: 'Energy Convertion Calculator',
+    energy_converter_wiki_icon: 'What\'s Energy?',
+    frequency_converter: 'Frequency Convertion Calculator',
+    frequency_converter_wiki_icon: 'What\'s Frequency?'
   }
 }
 const i18n = new VueI18n({

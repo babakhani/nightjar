@@ -48,22 +48,22 @@ import Converter from 'convert-units'
 import UnitConverter from '@/units-converter'
 
 export default {
-  name: 'Temperatures',
+  name: 'Temperatures', 
   data () {
     return {
       selectedUnit: 'cilisiuc',
       outputUnit: 'fahrenheit',
       units: {
         'cilisiuc': 'C',
-        'fahrenheit': 'F',
-        'kelvin': 'K'
+        'fahrenheit':'F',
+        'kelvin':'K'
       },
-      inputValue: 100
+      inputValue: 100,
     }
   },
   computed: {
     result () {
-      return Converter(parseInt(this.inputValue)).from(this.units[this.selectedUnit]).to(this.units[this.outputUnit])
+      return Converter(parseInt(this.inputValue)).from(this.units[this.selectedUnit]).to(this.units[this.outputUnit]);  
     }
   }
 }
