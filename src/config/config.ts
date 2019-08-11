@@ -2,7 +2,8 @@ export default {
  locale: 'en',
  defaultUnits: {
 	weight: 'kg',
-	height: 'cm'
+   height: 'cm',
+   temperature: 'cilicius'
  }
 }
 
