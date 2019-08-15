@@ -287,15 +287,15 @@ export default {
   ],
   temperature: [
     {
-      lable: 'Fahrenheit',
+      label: 'Fahrenheit',
       value: 'F'
     },
     {
-      lable: 'Celsius',
+      label: 'Celsius',
       value: 'C'
     },
     {
-      lable: 'kelvin',
+      label: 'kelvin',
       value: 'K'
     }
   ],

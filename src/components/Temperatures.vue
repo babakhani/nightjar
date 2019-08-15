@@ -22,42 +22,24 @@
                 <div class="col-8 col-md-8 col-sm-8 col-lg-6 col-xl-7 col-xs-12 q-mb-md q-pr-md">
                   <q-input autofocus ref="input" type="text" v-model="inputValue" :float-lable="$t('value_lable')"/>
                 </div>
-                   <!--<input v-model="inputValue" />-->
-                <div class="col-4 col-lg-6 co-xl-5 col-md-4 col-xm-4 col-sm-4 col-xs-12 q-pr-md">
-                  <select v-model="selectedUnit" >
-                  <option v-for="(unit, key) in units">
-                  {{ key }}
-                  </option>
-                 </select>
-                </div>
-               <div class="col-8 col-md-8 col-sm-8 col-lg-6 col-xl-7 col-xs-12 q-mb-md q-pr-md">
-               </div>
                <div class="col-4 col-lg-6 co-xl-5 col-md-4 col-xm-4 col-sm-4 col-xs-12 q-pr-md">
-                  <select v-model="outputUnit" >
-                  <option v-for="(unit, key) in units">
-                  {{ key }}
-                  </option>
-                  </select>
-                <!--<q-select-->
-                   <!--v-model="inputValue"-->
-                   <!--:float-lable="$t('input_unit')"-->
-                   <!--:options="temperature"-->
-                   <!--:separator="true"-->
-                   <!--radio-->
-                   <!-->
+                <q-select
+                   v-model="selectedUnit"
+                   :options="units.temperature"
+                   >
                 </q-select>
-                <!-->
-                  </div>
+                <q-select
+                   v-model="outputUnit"
+                   :options="units.temperature"
+                   >
+                </q-select>
+                </div>
               <h6> Result: {{ result }} </h6>
               </div>
-              <!--<div class="q-mt-lg">-->
-                 <!--<q-btn @click="reset" :label="$t('Reset')"/>-->
-                 <!--<q-btn @click="back" :label="$t('Back')"/>-->
-              <!--</div>-->
-                  <div class="q-mt-lg">
-                    <q-btn @click="reset" :label="$t('reset')"/>
-                      <q-btn @click="back" :label="$t('back')"/>
-                  </div>
+              <div class="q-mt-lg">
+                <q-btn @click="reset" :label="$t('reset')"/>
+                  <q-btn @click="back" :label="$t('back')"/>
+              </div>
             </q-card-main>
           </q-card>
         </div>
@@ -71,24 +53,21 @@
 import { openURL } from 'quasar'
 import Unit from '@/units'
 import Converter from 'convert-units'
+import Knowledge from '@/knowledge'
 
 export default {
   name: 'Temperatures',
   data () {
     return {
-      selectedUnit: 'celsiuc',
-      outputUnit: 'fahrenheit',
-      units: {
-        'celsiuc': 'C',
-        'fahrenheit': 'F',
-        'kelvin': 'K'
-      },
-      inputValue: 100
+      selectedUnit: 'C',
+      outputUnit: 'F',
+      units: Unit,
+      inputValue: null
     }
   },
   computed: {
     result () {
-      return Converter(parseInt(this.inputValue)).from(this.units[this.selectedUnit]).to(this.units[this.outputUnit])
+      return Knowledge.convert(this.inputValue, this.selectedUnit, this.outputUnit)
     }
   },
   methods: {
@@ -102,9 +81,3 @@ export default {
   }
 }
 </script>
-
-<style>
-a {
-  text-decoration : none;
-}
-</style>
