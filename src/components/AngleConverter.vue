@@ -41,7 +41,10 @@
                              :separator="true"
                              radio
                              />
-                        </div>
+                            <div class="q-mt-md">
+                              <q-btn @click="btnClick" icon="cached" round color="primary" class="float-right" />
+                            </div>
+                      </div>
                   </div>
                   <div v-if='this.value'>
                     <q-list-header class="q-mt-md">Result</q-list-header>
@@ -54,8 +57,8 @@
                     </q-item>
                   </div>
                   <div class="q-mt-lg">
-                    <q-btn @click="reset" :label="$t('Reset')"/>
-                      <q-btn @click="back" :label="$t('Back')"/>
+                    <q-btn @click="reset" :label="$t('reset')"/>
+                      <q-btn @click="back" :label="$t('back')"/>
                   </div>
               </q-card-main>
             </q-card>
@@ -69,8 +72,7 @@
 <script>
 import { openURL } from 'quasar'
 import Unit from '@/units'
-import Converter from 'convert-units'
-import UnitConverter from '@/units-converter'
+import Knowledge from '@/knowledge'
 
 export default {
   name: 'AngleConverter',
@@ -78,15 +80,15 @@ export default {
     return {
       unit: Unit,
       value: null,
-      inputUnit: 'deg',
-      outputUnit: 'rad'
+      inputUnit: this.$config.defaultUnits.inputUnitAngleConverter,
+      outputUnit: this.$config.defaultUnits.outputUnitAngleConverter
     }
   },
   computed: {
     angleConvert () {
       let out = null
       if (this.value) {
-        out = Converter(this.value).from(this.inputUnit).to(this.outputUnit)
+        out = Knowledge.convert(this.value, this.inputUnit, this.outputUnit)
       }
       return out
     }
@@ -98,6 +100,12 @@ export default {
     },
     back () {
       this.$router.go(-1)
+    },
+    btnClick () {
+      let x = this.inputUnit
+      let y = this.outputUnit
+      this.inputUnit = y
+      this.outputUnit = x
     }
   }
 }

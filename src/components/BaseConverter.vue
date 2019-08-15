@@ -37,6 +37,9 @@
                              :float-label="$t('output_unit')"
                              :options="unit.numericalBases"
                              />
+                            <div class="q-mt-md">
+                              <q-btn @click="btnClick" icon="cached" round color="primary" class="float-right" />
+                            </div>
                         </div>
                         <div v-if='this.inputValue'>
                           <q-list-header class="q-mt-md">Result</q-list-header>
@@ -50,8 +53,8 @@
                         </div>
                   </div>
                   <div class="q-mt-lg">
-                    <q-btn @click="reset" :label="$t('Reset')"/>
-                      <q-btn @click="back" :label="$t('Back')"/>
+                    <q-btn @click="reset" :label="$t('reset')"/>
+                      <q-btn @click="back" :label="$t('back')"/>
                   </div>
               </q-card-main>
             </q-card>
@@ -63,24 +66,24 @@
 </template>
 
 <script>
-import Converter from 'bases'
+import Knowledge from '@/knowledge'
 import Unit from '@/units'
+
 export default {
   name: 'BaseConvrter',
   data () {
     return {
       unit: Unit,
-      inputValue: '',
-      inputUnit: '10',
-      outputUnit: ''
+      inputValue: null,
+      inputUnit: this.$config.defaultUnits.inputUnitBaseConverter,
+      outputUnit: this.$config.defaultUnits.outputUnitBaseConverter
     }
   },
   computed: {
     toBase () {
       let out = null
       if (this.inputValue) {
-        let from = Converter.fromBase(this.inputValue, this.inputUnit)
-        out = Converter.toBase(from, this.outputUnit)
+        out = Knowledge.baseConverter(this.inputValue, this.inputUnit, this.outputUnit)
       }
       return out
     }
@@ -88,11 +91,16 @@ export default {
   methods: {
     reset () {
       this.inputValue = null
-      this.outputUnit = null
       this.$refs.input.focus()
     },
     back () {
       this.$router.go(-1)
+    },
+    btnClick () {
+      let x = this.inputUnit
+      let y = this.outputUnit
+      this.inputUnit = y
+      this.outputUnit = x
     }
   }
 }

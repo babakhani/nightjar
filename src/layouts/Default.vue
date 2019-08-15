@@ -1,13 +1,15 @@
 <template>
   <q-layout view="lHr Lpr lFf">
-    <div class="row">
-    <q-layout-header class="query q-mx-auto q-pt-lg col-12 col-xl-9 col-lg-9 col-md-10">
+    <q-layout-header
+      class="row " :class="{ 'scroll-header': !showNavbar }"
+      >
+      <div class="q-pb-xs query q-mx-auto q-pt-lg col-12 col-xl-9 col-lg-9 col-md-10" >
       <q-toolbar
         color="primary"
         :glossy="$q.theme === 'mat'"
         :inverted="$q.theme === 'ios'"
       >
-      <div class="textColor">
+      <div class="textColor q-ml-xs">
         <router-link  to="/">
           <img
             class="icon"
@@ -18,7 +20,7 @@
              </span>
         </router-link>
       </div>
-      <div class="q-ml-auto">
+      <div>
         <q-btn
            class="drawer-icon"
            flat
@@ -31,8 +33,8 @@
            />
       </div>
       </q-toolbar>
+      </div>
     </q-layout-header>
-    </div>
     <q-layout-drawer
       v-model="rightDrawerOpen"
       side="right"
@@ -75,11 +77,24 @@ export default {
   name: 'LayoutDefault',
   data () {
     return {
-      rightDrawerOpen: false
+      rightDrawerOpen: false,
+      showNavbar: true,
+      lastScrollPosition: 0,
+      scrollValue: 0
     }
   },
   methods: {
-    openURL
+    openURL,
+    onScroll () {
+      if (Math.abs(window.pageYOffset) < 90) {
+        this.showNavbar = window.pageYOffset < this.lastScrollPosition
+        this.lastScrollPosition = window.pageYOffset
+      }
+    }
+  },
+  mounted () {
+    this.lastScrollPosition = window.pageYOffset
+    window.addEventListener('scroll', this.onScroll)
   }
 }
 </script>

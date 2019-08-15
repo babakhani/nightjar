@@ -35,8 +35,8 @@
                       </q-item>
                   </div>
                 <div class="q-mt-lg">
-                  <q-btn @click="reset" :label="$t('Reset')"/>
-                    <q-btn @click="back" :label="$t('Back')"/>
+                  <q-btn @click="reset" :label="$t('reset')"/>
+                    <q-btn @click="back" :label="$t('back')"/>
                 </div>
               </q-card-main>
             </q-card>
@@ -48,6 +48,8 @@
 </template>
 
 <script>
+import Knowledge from '@/knowledge'
+
 export default {
   name: 'GoldenRatio',
   data () {
@@ -59,14 +61,14 @@ export default {
     shorterSection () {
       let out = null
       if (this.value) {
-        out = this.value / 1.61803398875
+        out = Knowledge.goldenRatioShorter(this.value)
       }
       return out
     },
     longerSection () {
       let out = null
       if (this.value) {
-        out = this.value * 1.61803398875
+        out = Knowledge.goldenRatioLonger(this.value)
       }
       return out
     }

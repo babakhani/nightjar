@@ -31,9 +31,9 @@
                            radio
                            />
                       </div>
-                    <div class="col-8 col-md-8 col-sm-8 col-lg-6 col-xl-7 col-xs-12 q-mb-md q-pr-md" >
+                      <div class="col-8 col-md-8 col-sm-8 col-lg-6 col-xl-7 col-xs-12 q-mb-md q-pr-md" >
                       </div>
-                      <div class="col-4 col-lg-6 col-xl-5 col-md-4 col-xm-4 col-sm-4 col-xs-12 q-pr-md">
+                        <div class="col-4 col-lg-6 col-xl-5 col-md-4 col-xm-4 col-sm-4 col-xs-12 q-pr-md">
                           <q-select
                              v-model="outputUnit"
                              :float-label="$t('output_unit')"
@@ -41,6 +41,9 @@
                              :separator="true"
                              radio
                              />
+                            <div class="q-mt-md">
+                              <q-btn @click="btnClick" icon="cached" round color="primary" class="float-right" />
+                            </div>
                         </div>
                   </div>
                   <div v-if='this.value'>
@@ -54,23 +57,22 @@
                     </q-item>
                   </div>
                   <div class="q-mt-lg">
-                    <q-btn @click="reset" :label="$t('Reset')"/>
-                      <q-btn @click="back" :label="$t('Back')"/>
+                    <q-btn @click="reset" :label="$t('reset')"/>
+                      <q-btn @click="back" :label="$t('back')"/>
                   </div>
-              </q-card-main>
-            </q-card>
+                      </q-card-main>
+                    </q-card>
           </div>
         </div>
       </div>
     </div>
-  </q-page>
+                              </q-page>
 </template>
 
 <script>
 import { openURL } from 'quasar'
 import Unit from '@/units'
-import Converter from 'convert-units'
-import UnitConverter from '@/units-converter'
+import Knowledge from '@/knowledge'
 
 export default {
   name: 'TimeConverter',
@@ -78,15 +80,15 @@ export default {
     return {
       unit: Unit,
       value: null,
-      inputUnit: 'd',
-      outputUnit: 'min'
+      inputUnit: this.$config.defaultUnits.inputUnitTimeConverter,
+      outputUnit: this.$config.defaultUnits.outputUnitTimeConverter
     }
   },
   computed: {
     timeConvert () {
       let out = null
       if (this.value) {
-        out = Converter(this.value).from(this.inputUnit).to(this.outputUnit)
+        out = Knowledge.convert(this.value, this.inputUnit, this.outputUnit)
       }
       return out
     }
@@ -98,6 +100,12 @@ export default {
     },
     back () {
       this.$router.go(-1)
+    },
+    btnClick () {
+      let x = this.inputUnit
+      let y = this.outputUnit
+      this.inputUnit = y
+      this.outputUnit = x
     }
   }
 }
