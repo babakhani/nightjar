@@ -54,6 +54,10 @@
                  <!--<q-btn @click="reset" :label="$t('Reset')"/>-->
                  <!--<q-btn @click="back" :label="$t('Back')"/>-->
               <!--</div>-->
+                  <div class="q-mt-lg">
+                    <q-btn @click="reset" :label="$t('reset')"/>
+                      <q-btn @click="back" :label="$t('back')"/>
+                  </div>
             </q-card-main>
           </q-card>
         </div>
@@ -85,6 +89,15 @@ export default {
   computed: {
     result () {
       return Converter(parseInt(this.inputValue)).from(this.units[this.selectedUnit]).to(this.units[this.outputUnit])
+    }
+  },
+  methods: {
+    reset () {
+      this.value = null
+      this.$refs.input.focus()
+    },
+    back () {
+      this.$router.go(-1)
     }
   }
 }
