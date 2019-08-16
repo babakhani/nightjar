@@ -47,7 +47,12 @@ const messages = {
     energy_converter: 'Energy Convertion Calculator',
     energy_converter_wiki_icon: 'What\'s Energy?',
     frequency_converter: 'Frequency Convertion Calculator',
-    frequency_converter_wiki_icon: 'What\'s Frequency?'
+    frequency_converter_wiki_icon: 'What\'s Frequency?',
+    ohm_law: 'Ohm\'s Law',
+    ohm_wiki_icon: 'All about Ohm\'s Law',
+    voltage_label: 'Voltage',
+    current_label: 'Current',
+    resistance_label: 'Resistance'
   }
 }
 const i18n = new VueI18n({

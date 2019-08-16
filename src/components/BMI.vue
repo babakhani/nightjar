@@ -68,7 +68,6 @@
                         <q-item-main>
                           <q-item-tile class="q-title" label> Your Normal weight is between {{ minNormalWeight
                             }} {{ weightUnit }} to {{ maxNormalWeight }} {{ weightUnit }}
-
                           </q-item-tile>
                         </q-item-main>
                         </q-item>

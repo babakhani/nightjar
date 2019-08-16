@@ -5,8 +5,8 @@ export default {
   convert (value, fromUnit, toUnit) {
     return Converter(value).from(fromUnit).to(toUnit)
   },
-  calulateOHM () {
-
+  calculateOHM (V, I) {
+    return V / I
   },
   bmi (weight, height) {
     return weight / Math.pow(height, 2)

@@ -159,6 +159,14 @@ export default {
           icon: 'frequencyConverter',
           tag: 'frequency , frequency convertion , convert , rpm , hz , mhz',
           category: 'Convertion'
+        },
+        {
+          name: 'Ohm\'s Law',
+          route: 'Ohm.Law',
+          description: 'Resistance calculator',
+          icon: 'ohmLaw',
+          tag: 'frequency , ohm law , resistance , volts , apmeres ',
+          category: 'Electronic'
         }
       ],
       searchQuery: null,

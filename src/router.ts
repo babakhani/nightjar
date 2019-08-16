@@ -17,6 +17,7 @@ import TimeConverter from './components/TimeConverter.vue'
 import AngleConverter from './components/AngleConverter.vue'
 import EnergyConverter from './components/EnergyConverter.vue'
 import FrequencyConverter from './components/FrequencyConverter.vue'
+import OhmLaw from './components/OhmLaw.vue'
 
 Vue.use(Router)
 
@@ -106,6 +107,11 @@ export default new Router({
           path: '/Frequency.Converter',
           name: 'Frequency Converter',
           component: FrequencyConverter
+        },
+        {
+          path: '/Ohm.Law',
+          name: 'Ohm\'s Law',
+          component: OhmLaw
         }
       ]
     }
