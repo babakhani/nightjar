@@ -55,34 +55,36 @@ export default {
   name: 'OhmLaw',
   data () {
     return {
-      volt: null,
-      ampere: null,
-      ohm: null
+      volt: '',
+      ampere: '',
+      ohm: ''
     }
   },
   computed: {
-    resistance () {
-      get: ohm () { 
-        return this.ohm
+    resistance: {
+      get: function () {
+
       },
-        set: ohm () {
-          let value = Knowledge.calculateOHM(this.voltage, this.current)
-          return value
-        }
+      set: function () {
+        this.ohm = Knowledge.calculateOHM(this.voltage, this.current)
+        return this.ohm
+      }
     },
-    voltage () {
-      set: volta () {
+    voltage: {
+      get: function () {
         return this.volt
       },
-      get: volta () {
+      set: function () {
+        this.volt = this.ohm * this.ampere
         return this.volt
       }
     },
-    currenti () {
-      set: {
+    current: {
+      get: function () {
         return this.ampere
       },
-      get: {
+      set: function () {
+        this.ampere = this.volt / this.ohm
         return this.ampere
       }
     }
