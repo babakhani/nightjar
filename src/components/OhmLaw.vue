@@ -20,21 +20,19 @@
               <q-card-main>
                 <div class="row q-mt-md">
                   <div class="col-12 col-md-11 col-sm-10 col-xs-12 q-xl-12 q-lg-10 q-mb-md q-pr-md" >
-                    <q-input autofocus ref="input" type="text" v-model="voltage" @change="OHM"
-                      :float-label="$t('voltage_label')"/>
+                    <q-input autofocus ref="input" type="text" v-model="voltage" :float-label="$t('voltage_label')"/>
                   </div>
                 </div>
                     <div class="row">
                       <div class="col-12 col-md-11 col-sm-10 col-xs-12 q-xl-12 q-lg-10 q-mb-md q-pr-md" >
-                        <q-input type="text" v-model="current" @change="OHM" :float-label="$t('current_label')"/>
+                        <q-input type="text" v-model="current" :float-label="$t('current_label')"/>
                       </div>
                     </div>
                    <div class="row">
                      <div class="col-12 col-md-11 col-sm-10 col-xs-12 q-xl-12 q-lg-10 q-mb-md q-pr-md" >
-                       <q-input type="text" :value="newValue" v-model="resistance" :float-label="$t('resistance_label')"/>
+                       <q-input type="text" v-model="resistance" :float-label="$t('resistance_label')"/>
                       </div>
                    </div>
-                   <q-field> {{OHM}} </q-field>
                    <div class="q-mt-md">
                       <q-btn @click="reset" :label="$t('reset')"/>
                       <q-btn @click="back" :label="$t('back')"/>
@@ -57,25 +55,44 @@ export default {
   name: 'OhmLaw',
   data () {
     return {
-      unit: Unit,
-      voltage: null,
-      current: null,
-      resistance: null,
-      newValue: this.OHM
+      volt: null,
+      ampere: null,
+      ohm: null
     }
   },
   computed: {
-    OHM () {
-      let out = Knowledge.calculateOHM(this.voltage, this.current)
-      return out
+    resistance () {
+      get: ohm () { 
+        return this.ohm
+      },
+        set: ohm () {
+          let value = Knowledge.calculateOHM(this.voltage, this.current)
+          return value
+        }
+    },
+    voltage () {
+      set: volta () {
+        return this.volt
+      },
+      get: volta () {
+        return this.volt
+      }
+    },
+    currenti () {
+      set: {
+        return this.ampere
+      },
+      get: {
+        return this.ampere
+      }
     }
   },
   methods: {
     openURL,
     reset () {
-      this.voltage = null
-      this.current = null
-      this.resistance = null
+      this.volt = null
+      this.ampere = null
+      this.ohm = null
       this.$refs.input.focus()
     },
     back () {
