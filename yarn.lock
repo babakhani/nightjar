@@ -2142,6 +2142,11 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
+bases@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/bases/-/bases-0.2.1.tgz#c0294a3f86d403d79b82ec4997b27caf90f44570"
+  integrity sha1-wClKP4bUA9ebguxJl7J8r5D0RXA=
+
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -3159,10 +3164,10 @@ convert-source-map@^1.1.0, convert-source-map@^1.4.0, convert-source-map@^1.5.1:
   dependencies:
     safe-buffer "~5.1.1"
 
-convert-units@^2.3.4:
+"convert-units@git+https://github.com/keepformula/convert-units.git":
   version "2.3.4"
-  resolved "https://registry.yarnpkg.com/convert-units/-/convert-units-2.3.4.tgz#a279f4b3cb9b5d5094beba61abc742dcb46a180d"
-  integrity sha512-ERHfdA0UhHJp1IpwE6PnFJx8LqG7B1ZjJ20UvVCmopEnVCfER68Tbe3kvN63dLbYXDA2xFWRE6zd4Wsf0w7POg==
+  uid fd86da4751336bb345aad70ba9a54606bc043159
+  resolved "git+https://github.com/keepformula/convert-units.git#fd86da4751336bb345aad70ba9a54606bc043159"
   dependencies:
     lodash.foreach "2.3.x"
     lodash.keys "2.3.x"
@@ -5672,9 +5677,9 @@ hoopy@^0.1.2:
   integrity sha512-HRcs+2mr52W0K+x8RzcLzuPPmVIKMSv97RGHy0Ea9y/mpcaK+xTrjICA04KAHi4GRzxliNqNJEFYWHghy3rSfQ==
 
 hosted-git-info@^2.1.4, hosted-git-info@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
-  integrity sha512-7T/BxH19zbcCTa8XkMlbK5lTo1WtgkFi3GvdWEyNuc4Vex7/9Dqbnpsf4JMydcfj9HCg4zUWFTL3Za6lapg5/w==
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
+  integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -12097,10 +12102,10 @@ vue-cli-plugin-electron-builder@^1.2.0:
     webpack-chain "^5.0.0"
     yargs "^13.2.2"
 
-vue-cli-plugin-quasar@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-quasar/-/vue-cli-plugin-quasar-1.0.0.tgz#63dfd6994e1fcfa241be5b1e87f393266b2351f7"
-  integrity sha512-15Jeu/NaGsPAlxf9Q+w1TnF+gUbcJfbgz94f8Mcs3zqBLnSl9VIOFWsYmaeVFc/nwCCkKeVohCCRa/IQBfTC7A==
+vue-cli-plugin-quasar@^0.17.1:
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-quasar/-/vue-cli-plugin-quasar-0.17.1.tgz#57615d5b84e2d51a8bc3b7902d9fb3f231031965"
+  integrity sha512-PXDENbzifnEzMjfbZt0nrjZp1FM4ShF+fBcXJ/EOxMpQ8Wo6/8YdXOUK8j+2OPdfYW2e+if/dvSsrXDOkAoUSg==
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
