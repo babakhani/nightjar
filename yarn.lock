@@ -2142,6 +2142,11 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
+bases@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/bases/-/bases-0.2.1.tgz#c0294a3f86d403d79b82ec4997b27caf90f44570"
+  integrity sha1-wClKP4bUA9ebguxJl7J8r5D0RXA=
+
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -3159,10 +3164,10 @@ convert-source-map@^1.1.0, convert-source-map@^1.4.0, convert-source-map@^1.5.1:
   dependencies:
     safe-buffer "~5.1.1"
 
-convert-units@^2.3.4:
+"convert-units@git+https://github.com/keepformula/convert-units.git":
   version "2.3.4"
-  resolved "https://registry.yarnpkg.com/convert-units/-/convert-units-2.3.4.tgz#a279f4b3cb9b5d5094beba61abc742dcb46a180d"
-  integrity sha512-ERHfdA0UhHJp1IpwE6PnFJx8LqG7B1ZjJ20UvVCmopEnVCfER68Tbe3kvN63dLbYXDA2xFWRE6zd4Wsf0w7POg==
+  uid fd86da4751336bb345aad70ba9a54606bc043159
+  resolved "git+https://github.com/keepformula/convert-units.git#fd86da4751336bb345aad70ba9a54606bc043159"
   dependencies:
     lodash.foreach "2.3.x"
     lodash.keys "2.3.x"
@@ -3888,9 +3893,9 @@ dns-equal@^1.0.0:
   integrity sha1-s55/HabrCnW6nBcySzR1PEfgZU0=
 
 dns-packet@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/dns-packet/-/dns-packet-1.3.1.tgz#12aa426981075be500b910eedcd0b47dd7deda5a"
-  integrity sha512-0UxfQkMhYAUaZI+xrNZOz/as5KgDU0M/fQ9b6SpkyLbk3GEswDi6PADJVaYJradtRVsRIlF1zLyOodbcTCDzUg==
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/dns-packet/-/dns-packet-1.3.4.tgz#e3455065824a2507ba886c55a89963bb107dec6f"
+  integrity sha512-BQ6F4vycLXBvdrJZ6S3gZewt6rcrks9KBgM9vrhW+knGRqc8uEdT7fuCwloc7nny5xNoMJ17HGH0R/6fpo8ECA==
   dependencies:
     ip "^1.1.0"
     safe-buffer "^5.0.1"
@@ -10353,10 +10358,15 @@ rxjs@^6.3.3, rxjs@^6.4.0:
   dependencies:
     tslib "^1.9.0"
 
-safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
+
+safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
+  integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
 safe-regex@^1.1.0:
   version "1.1.0"
@@ -12097,10 +12107,10 @@ vue-cli-plugin-electron-builder@^1.2.0:
     webpack-chain "^5.0.0"
     yargs "^13.2.2"
 
-vue-cli-plugin-quasar@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-quasar/-/vue-cli-plugin-quasar-1.0.0.tgz#63dfd6994e1fcfa241be5b1e87f393266b2351f7"
-  integrity sha512-15Jeu/NaGsPAlxf9Q+w1TnF+gUbcJfbgz94f8Mcs3zqBLnSl9VIOFWsYmaeVFc/nwCCkKeVohCCRa/IQBfTC7A==
+vue-cli-plugin-quasar@^0.17.1:
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-quasar/-/vue-cli-plugin-quasar-0.17.1.tgz#57615d5b84e2d51a8bc3b7902d9fb3f231031965"
+  integrity sha512-PXDENbzifnEzMjfbZt0nrjZp1FM4ShF+fBcXJ/EOxMpQ8Wo6/8YdXOUK8j+2OPdfYW2e+if/dvSsrXDOkAoUSg==
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
